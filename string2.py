@@ -4,7 +4,7 @@ Kenzie assignment: String2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Areiahna Cooks"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -23,8 +23,14 @@ __author__ = "???"
 
 
 def verbing(s):
-    # your code here
-    return
+    if len(s) < 3:
+        results = s
+    elif len(s) >= 3:
+        if s.endswith("ing"):
+            results = s+"ly"
+        else:
+            results = s+"ing"
+    return results
 
 
 # E. not_bad
@@ -37,8 +43,16 @@ def verbing(s):
 
 
 def not_bad(s):
-    # your code here
-    return
+    if s.find("not") < s.find("bad"):
+        if s.endswith("!"):
+            end = s.find("not")
+            s = s[0:end]
+            s = s + "good!"
+        else:
+            end = s.find("not")
+            s = s[0:end]
+            s = s + "good"
+    return s
 
 
 # F. front_back
@@ -52,8 +66,32 @@ def not_bad(s):
 
 
 def front_back(a, b):
-    # your code here
-    return
+    if len(a) % 2 == 0:
+        frontSplit = len(a)//2
+        backSplit = frontSplit
+        frontA = a[0:frontSplit]
+        backA = a[backSplit:]
+
+    else:
+        frontSplit = len(a)//2 + 1
+        backSplit = frontSplit
+        frontA = a[0:frontSplit]
+        backA = a[backSplit:]
+
+    if len(b) % 2 == 0:
+        frontSplit = len(b)//2
+        backSplit = frontSplit
+        frontB = b[0:frontSplit]
+        backB = b[backSplit:]
+        ANSWER = frontA + frontB + backA + backB
+    else:
+        frontSplit = len(b)//2 + 1
+        backSplit = frontSplit
+        frontB = b[0:frontSplit]
+        backB = b[backSplit:]
+        ANSWER = frontA + frontB + backA + backB
+
+    return ANSWER
 
 
 # Provided simple test() function used in main() to print
