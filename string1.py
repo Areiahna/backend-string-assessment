@@ -4,7 +4,7 @@ Kenzie assignment: String1
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Areiahna Cooks, https://www.w3resource.com/python-exercises/string/python-data-type-string-exercise-3.php"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -28,8 +28,12 @@ __author__ = "???"
 
 
 def donuts(count):
-    # your code here
-    return
+    if count <= 9:
+        results = "Number of donuts: {}".format(count)
+
+    else:
+        results = 'Number of donuts: many'
+    return results
 
 
 # B. both_ends
@@ -42,8 +46,10 @@ def donuts(count):
 
 
 def both_ends(s):
-    # your code here
-    return
+    if len(s) < 2:
+        return ""
+    else:
+        return s[:2] + s[-2:]
 
 
 # C. fix_start
@@ -58,8 +64,11 @@ def both_ends(s):
 
 
 def fix_start(s):
-    # your code here
-    return
+    first_Letter = s[0]
+    s = s[1:]
+    s = s.replace(first_Letter, '*')
+    s = first_Letter + s
+    return s
 
 
 # D. mix_up
@@ -73,8 +82,12 @@ def fix_start(s):
 
 
 def mix_up(a, b):
-    # your code here
-    return
+    a_FirstLetters = a[0:2]
+    b_FirstLetters = b[0:2]
+    a = a.replace(a[0:2], b_FirstLetters)
+    b = b.replace(b[0:2], a_FirstLetters)
+    results = a+" "+b
+    return results
 
 
 # Provided simple test() function used in main() to print
